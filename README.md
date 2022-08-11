@@ -1,8 +1,8 @@
 ## Help
 ```
-usage: python LogParser/parse.py [-d logs_dir] [-r config_for_regex.txt] [-c charset_for_logs] [-a value_for_aggregation] [-p processes_count]
-       python LogParser/parse.py -f [-d logs_dir] [-r config_for_regex.txt] [-c charset_for_logs] [-a value_for_aggregation] [-p processes_count]
-       python LogParser/parse.py [-n tables_dir] [-a value_for_aggregation]
+usage: python log_parser/parse.py [-d logs_dir] [-r config_for_regex.txt] [-c charset_for_logs] [-a value_for_aggregation] [-p processes_count]
+       python log_parser/parse.py -f [-d logs_dir] [-r config_for_regex.txt] [-c charset_for_logs] [-a value_for_aggregation] [-p processes_count]
+       python log_parser/parse.py [-n tables_dir] [-a value_for_aggregation]
 
 Parse logs and building graphics. Needs matplotlib and pandas.
 
