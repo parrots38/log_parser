@@ -40,14 +40,14 @@ def main(args):
     plotter = Plotter.Plotter(graphic_filename, args.aggregation, args.diff)
 
     filenames = Utils.get_files_in_dir(dir_with_results)
-    i = 1
     index_valuename_filename = []
     for filename in filenames:
         if filename.endswith("csv"):
+            i = int(os.path.basename(filename).rsplit(".", 1)[0][6:])
+            # /.../.../result123.csv -> 123
             with open(filename, encoding=args.charset, errors='ignore') as file:
                 value_name = file.readline().split(";")[1]
                 index_valuename_filename.append((i, value_name, filename))
-            i += 1
     print(f"Files with tables for graph: {filenames}")
 
     for i, _, filename in index_valuename_filename:
