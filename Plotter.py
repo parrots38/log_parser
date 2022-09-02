@@ -47,6 +47,9 @@ class Plotter:
         else:
             result_df = row_df.resample(f"{self._aggregation}T").count()
 
+        result_filename = filename.rsplit(".", 1)[0] + "_aggregated.csv"
+        with open(result_filename, "w") as file:
+            result_df.to_csv(file, index=True)
         self._axes.plot(result_df.index, result_df[result_df.columns[0]], linewidth=1)
 
     def set_legend(self, descriptions):
